@@ -2,17 +2,11 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer>
-      <div className="footer-content">
-        <img src="logo-footer.png" alt="Little Lemon" />
-        <div className="footer-links">
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy Policy</a>
-        </div>
-        <p>© 2023 Little Lemon</p>
-      </div>
+    <footer className="site-footer">
+      <img src="/logo-footer.png" alt="Little Lemon" width="100" />
+      <p>© 2025 Little Lemon Restaurant</p>
     </footer>
-  )
+  );
 }
 
 export default Footer
