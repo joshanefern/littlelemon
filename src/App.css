@@ -5,11 +5,11 @@
   --highlight-light: #edefee;
   --highlight-dark: #333333;
   --white: #ffffff;
-  
+
   /* Typography */
   --font-display: 'Markazi Text', serif;
   --font-body: 'Karla', sans-serif;
-  
+
   /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -185,4 +185,181 @@ h3 {
 
 p {
   margin: var(--space-sm) 0;
+}
+
+/* ===== Chicago Component Styles ===== */
+.chicago {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background-color: var(--highlight-light);
+}
+
+.chicago-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.chicago-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.chicago-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* ===== CallToAction Component Styles ===== */
+.call-to-action {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.call-to-action .button {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+
+/* ===== Specials Component Styles ===== */
+.specials {
+  padding: var(--space-xl);
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+/* ===== DishCard Component Styles ===== */
+.dish-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dish-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dish-content h3 {
+  color: var(--primary-color);
+}
+
+.price {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* ===== CustomersSay Component Styles ===== */
+.testimonials {
+  padding: var(--space-xl);
+  background-color: var(--highlight-light);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+/* ===== BookingPage Styles ===== */
+.booking-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.booking-form {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.booking-form label {
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: var(--space-sm);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-sm);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (min-width: 768px) {
+  .chicago {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .call-to-action {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .specials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .specials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Button Styles ===== */
+.button {
+  background: var(--secondary-color);
+  color: var(--highlight-dark);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
 }
