@@ -1,10 +1,12 @@
-function BookingPage() {
-    return (
-      <main className="booking-page">
-        <h1>Reserve a Table</h1>
-        {/* Booking form will go here */}
-      </main>
-    );
-  }
+import BookingForm from "../Components/BookingForm";
+
+function BookingPage({ submitForm }) {
+  return (
+    <main className="booking-page">
+      <h1>Reserve a Table</h1>
+      <BookingForm submitForm={submitForm} />
+    </main>
+  );
+}
 
 export default BookingPage;

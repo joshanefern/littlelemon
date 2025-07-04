@@ -316,6 +316,56 @@ p {
   border-radius: var(--border-radius-sm);
 }
 
+.booking-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Bookings table styles */
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reservations-section {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+.bookings-table th {
+  background-color: #f4ce14; /* accent color */
+  color: #333;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+}
+
+.bookings-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.bookings-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.bookings-table tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease-in-out;
+}
+
 /* ===== Responsive Adjustments ===== */
 @media (min-width: 768px) {
   .chicago {
@@ -343,6 +393,16 @@ p {
   
   .testimonials-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bookings-table {
+    font-size: 14px;
+  }
+  .bookings-table th,
+  .bookings-table td {
+    padding: 6px 4px;
   }
 }
 
