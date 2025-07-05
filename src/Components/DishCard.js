@@ -1,3 +1,4 @@
+import React from 'react';
 
 function DishCard({ title, description, price, image }) {
     return (

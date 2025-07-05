@@ -1,3 +1,4 @@
+import React from 'react';
 import CallToAction from './Components/CallToAction';
 import Specials from './Components/Specials';
 import CustomersSay from './Components/CustomersSay';

@@ -2,10 +2,10 @@ import React from 'react'
 
 function CustomersSay() {
   return (
-    <div>
-      
-    </div>
+    <section className="testimonials">
+      <h2>Customer Testimonials</h2>
+    </section>
   )
 }
 
-export default CustomersSay
+export default CustomersSay;

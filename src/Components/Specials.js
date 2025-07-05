@@ -1,3 +1,5 @@
+import React from 'react';
+
 import DishCard from './DishCard';
 
 const specialsData = [
@@ -8,7 +10,6 @@ const specialsData = [
     price: "$12.99",
     image: "/greek-salad.jpg"
   },
-  // Add more specials
 ];
 
 function Specials() {

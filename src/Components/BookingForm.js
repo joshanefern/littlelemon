@@ -1,3 +1,4 @@
+import React from 'react';
 import { useReducer, useState } from 'react';
 
 const initializeTimes = () => {
@@ -5,7 +6,7 @@ const initializeTimes = () => {
   if (window.fetchAPI) {
     return window.fetchAPI(today);
   } else {
-    return ['12:00','13:00','14:00','15:00','16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+    return ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
   }
 };
 
@@ -49,64 +50,99 @@ function BookingForm({ submitForm }) {
   };
 
   return (
-    <div className="booking-container">
-      <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px', marginBottom: '40px' }}>
-        <label htmlFor="res-date">Choose date</label>
-        <input 
-          type="date" 
-          id="res-date"
-          value={date}
-          onChange={handleDateChange}
-          required
-        />
-  
-        <label htmlFor="res-time">Choose time</label>
-        <select
-          id="res-time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          required
-        >
-          <option value="" disabled>Select time</option>
-          {availableTimes.map((timeOption) => (
-            <option key={timeOption} value={timeOption}>{timeOption}</option>
-          ))}
-        </select>
-  
-        <label htmlFor="guests">Number of guests</label>
-        <input
-          type="number"
-          id="guests"
-          min="1"
-          max="10"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
-          required
-        />
-  
-        <label htmlFor="occasion">Occasion</label>
-        <select
-          id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option value="Birthday">Birthday</option>
-          <option value="Anniversary">Anniversary</option>
-        </select>
-  
-        <button type="submit">Make Reservation</button>
+    <section className="booking-container" aria-label="Reservation Form Section">
+      <form
+        onSubmit={handleSubmit}
+        className="booking-form"
+        aria-describedby="bookingInstructions"
+      >
+        <fieldset>
+          <legend id="bookingInstructions">Make a reservation by filling out the form below</legend>
+
+          <div className="form-field">
+            <label htmlFor="res-date">Choose date</label>
+            <input
+              type="date"
+              id="res-date"
+              value={date}
+              onChange={handleDateChange}
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="res-time">Choose time</label>
+            <select
+              id="res-time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              required
+              aria-required="true"
+              aria-label="Select reservation time"
+            >
+              <option value="" disabled>Select time</option>
+              {availableTimes.map((timeOption) => (
+                <option key={timeOption} value={timeOption}>{timeOption}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="guests">Number of guests</label>
+            <input
+              type="number"
+              id="guests"
+              min="1"
+              max="10"
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              required
+              aria-required="true"
+              aria-describedby="guestCountHelp"
+            />
+            <small id="guestCountHelp">Please enter between 1 and 10 guests</small>
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="occasion">Occasion</label>
+            <select
+              id="occasion"
+              value={occasion}
+              onChange={(e) => setOccasion(e.target.value)}
+              aria-label="Select occasion for reservation"
+            >
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            aria-label="On Click: Make reservation"
+            className="button"
+          >
+            Make Reservation
+          </button>
+        </fieldset>
       </form>
-  
+
       {bookingData.length > 0 && (
-        <section className="reservations-section">
-          <h2>Submitted Bookings</h2>
-          <table className="bookings-table">
+        <section
+          className="reservations-section"
+          aria-live="polite"
+          aria-label="Submitted bookings"
+        >
+          <header>
+            <h2>Submitted Bookings</h2>
+          </header>
+          <table className="bookings-table" role="table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Guests</th>
-                <th>Occasion</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Occasion</th>
               </tr>
             </thead>
             <tbody>
@@ -122,7 +158,7 @@ function BookingForm({ submitForm }) {
           </table>
         </section>
       )}
-    </div>
+    </section>
   );
 }
 

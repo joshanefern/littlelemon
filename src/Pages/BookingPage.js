@@ -1,3 +1,4 @@
+import React from 'react';
 import BookingForm from "../Components/BookingForm";
 
 function BookingPage({ submitForm }) {
