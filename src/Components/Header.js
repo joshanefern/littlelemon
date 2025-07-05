@@ -1,11 +1,14 @@
 import React from 'react'
+import homeIcon from '../assets/Logo.svg';
 
 function Header() {
   return (
     <header>
-      <img src="/logo.png" alt="Little Lemon" className="logo" />
+      <div className="logo-wrapper">
+        <img src={homeIcon} alt="Little Lemon" className="logo" />
+      </div>
     </header>
   );
 }
 
-export default Header
+export default Header;

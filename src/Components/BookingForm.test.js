@@ -1,7 +1,6 @@
 // src/Components/timesReducer.test.js
 import { initializeTimes, updateTimes } from './BookingForm';
 
-// Mock fetchAPI globally before tests
 const mockFetchAPI = (date) => {
   return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import DishCard from './DishCard';
 
 const specialsData = [

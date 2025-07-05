@@ -1,4 +1,6 @@
 import React from 'react';
+import restaurant from "../assets/restaurant.jpg"
+import chefs from "../assets/Mario and Adrian A.jpg"
 
 function Chicago() {
     return (
@@ -18,8 +20,8 @@ function Chicago() {
           </div>
         </div>
         <div className="chicago-images">
-          <img src="/chicago-restaurant.jpg" alt="Little Lemon Chicago location" />
-          <img src="/chefs.jpg" alt="Little Lemon chefs at work" />
+          <img src={restaurant} alt="Little Lemon Chicago location" />
+          <img src={chefs} alt="Little Lemon chefs at work" />
         </div>
       </section>
     );
